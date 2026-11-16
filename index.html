@@ -329,10 +329,10 @@ html.intro .ready .ab-carimbo img{animation:ab-coroa .4s cubic-bezier(.34,1.4,.6
 html.intro .ready .ab-food.f1{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .2s forwards;--s:.7}
 html.intro .ready .ab-food.f2{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .4s forwards;--s:.84}
 html.intro .ready .ab-food.f3{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .6s forwards;--s:.98}
-.ab-foto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%;opacity:0;clip-path:inset(30% 14% 12% 14% round 28px);transform:scale(1.08)}
+.ab-foto{position:absolute;left:50%;top:calc(50% + min(11vh,84px));height:min(58vh,130vw);aspect-ratio:9/16;width:auto;object-fit:cover;border-radius:22px;border:4px solid #000;opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(-4deg)}
 .ab-carimbo{z-index:3}
-html.intro .ready .ab-foto{animation:ab-foto .55s cubic-bezier(.65,0,.2,1) .8s forwards}
-@keyframes ab-foto{0%{opacity:1;clip-path:inset(30% 14% 12% 14% round 28px);transform:scale(1.08)}100%{opacity:1;clip-path:inset(0 0 0 0 round 0);transform:scale(1)}}
+html.intro .ready .ab-foto{animation:ab-foto .55s cubic-bezier(.2,1.3,.4,1) .8s forwards}
+@keyframes ab-foto{0%{opacity:1;transform:translate(-50%,-50%) scale(.55) rotate(-4deg)}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-2deg)}}
 html.intro .ready .cortina{animation:ab-sobe .8s cubic-bezier(.76,0,.24,1) 1.6s forwards}
 html.intro .ready .queijo{animation:ab-puxa .8s cubic-bezier(.5,0,.2,1) 1.6s forwards}
 @keyframes ab-fome{from{opacity:0;transform:translate(-50%,-50%) scale(1.25)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
