@@ -21,7 +21,7 @@
 <link rel="preload" href="assets/img/ab1.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/img/ab2.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/img/ab3.webp" as="image" fetchpriority="high">
-<link rel="preload" href="assets/img/ab_torre.webp" as="image" fetchpriority="high">
+<link rel="preload" href="assets/img/cut_triplo.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/img/L_exage.webp" as="image">
 <link rel="preload" href="assets/img/L_rados.webp" as="image">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
@@ -329,12 +329,10 @@ html.intro .ready .ab-carimbo img{animation:ab-coroa .4s cubic-bezier(.34,1.4,.6
 html.intro .ready .ab-food.f1{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .2s forwards;--s:.7}
 html.intro .ready .ab-food.f2{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .4s forwards;--s:.84}
 html.intro .ready .ab-food.f3{animation:ab-flash .2s cubic-bezier(.2,1.6,.4,1) .6s forwards;--s:.98}
-.ab-foto{position:absolute;left:50%;top:calc(50% + min(11vh,84px));height:min(58vh,130vw);aspect-ratio:9/16;width:auto;object-fit:cover;border-radius:22px;border:4px solid #000;opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(-4deg)}
 .ab-carimbo{z-index:3}
-html.intro .ready .ab-foto{animation:ab-foto .55s cubic-bezier(.2,1.3,.4,1) .8s forwards}
-@keyframes ab-foto{0%{opacity:1;transform:translate(-50%,-50%) scale(.55) rotate(-4deg)}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(-2deg)}}
-html.intro .ready .cortina{animation:ab-sobe .8s cubic-bezier(.76,0,.24,1) 1.6s forwards}
-html.intro .ready .queijo{animation:ab-puxa .8s cubic-bezier(.5,0,.2,1) 1.6s forwards}
+html.intro .ready .ab-food.f4{animation:ab-last .45s cubic-bezier(.2,1.5,.4,1) .8s forwards;--s:1.12}
+html.intro .ready .cortina{animation:ab-sobe .8s cubic-bezier(.76,0,.24,1) 1.3s forwards}
+html.intro .ready .queijo{animation:ab-puxa .8s cubic-bezier(.5,0,.2,1) 1.3s forwards}
 @keyframes ab-fome{from{opacity:0;transform:translate(-50%,-50%) scale(1.25)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes ab-flash{0%{opacity:1;transform:translate(-50%,-50%) scale(calc(var(--s) - .1))}25%{transform:translate(-50%,-50%) scale(var(--s))}99%{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}100%{opacity:0}}
 @keyframes ab-last{from{opacity:1;transform:translate(-50%,-50%) scale(calc(var(--s) - .12))}to{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}}
@@ -342,13 +340,13 @@ html.intro .ready .queijo{animation:ab-puxa .8s cubic-bezier(.5,0,.2,1) 1.6s for
 @keyframes ab-puxa{0%{transform:scaleY(.25)}55%{transform:scaleY(1.5)}100%{transform:scaleY(.8)}}
 .abertura.fim{display:none!important}
 /* com a abertura, a coroa espera a cortina subir */
-html.intro .ready .corpo{animation-delay:1.7s}
-html.intro .ready .ly-crown{animation-delay:1.95s}
-html.intro .ready .ly-dots{animation-delay:2.65s}
-html.intro .ready .topo-faixa{animation-delay:2.4s,0s}
-html.intro .ready .entra.e1{animation-delay:2.45s}
-html.intro .ready .entra.e2{animation-delay:2.57s}
-html.intro .ready .zap{animation-delay:2.7s}
+html.intro .ready .corpo{animation-delay:1.4s}
+html.intro .ready .ly-crown{animation-delay:1.65s}
+html.intro .ready .ly-dots{animation-delay:2.35s}
+html.intro .ready .topo-faixa{animation-delay:2.1s,0s}
+html.intro .ready .entra.e1{animation-delay:2.15s}
+html.intro .ready .entra.e2{animation-delay:2.27s}
+html.intro .ready .zap{animation-delay:2.4s}
 @media (prefers-reduced-motion:reduce){
   html.js .ly-crown,html.js .ly-dots,html.js .corpo,html.js .topo-faixa{opacity:1!important;transform:none!important}html.js .linha img,html.js .entra{transform:none!important;opacity:1!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
@@ -363,7 +361,7 @@ html.intro .ready .zap{animation-delay:2.7s}
     <img class="ab-food f1" src="assets/img/ab1.webp" alt="">
     <img class="ab-food f2" src="assets/img/ab2.webp" alt="">
     <img class="ab-food f3" src="assets/img/ab3.webp" alt="">
-    <img class="ab-foto" src="assets/img/ab_torre.webp" alt="">
+    <img class="ab-food f4" src="assets/img/cut_triplo.webp" alt="">
     <svg class="queijo" viewBox="0 0 480 200" preserveAspectRatio="none"><path d="M480 0H0V24H18V120a13.0 13.0 0 0 0 26 0V24H62V70a9.0 9.0 0 0 0 18 0V24H96V170a15.0 15.0 0 0 0 30 0V24H150V60a8.0 8.0 0 0 0 16 0V24H188V130a12.0 12.0 0 0 0 24 0V24H236V185a17.0 17.0 0 0 0 34 0V24H292V80a9.0 9.0 0 0 0 18 0V24H330V150a13.0 13.0 0 0 0 26 0V24H384V64a8.0 8.0 0 0 0 16 0V24H418V140a14.0 14.0 0 0 0 28 0V24H458V58a7.0 7.0 0 0 0 14 0V24H480Z"/></svg>
   </div>
 </div>
@@ -553,7 +551,7 @@ html.intro .ready .zap{animation-delay:2.7s}
   }
 
   // entrada da logo (só uma vez, sem pulos)
-  const lays=[...document.querySelectorAll('#logo img'+(document.documentElement.classList.contains('intro')?',.ab-food,.ab-foto':''))];let n=0;
+  const lays=[...document.querySelectorAll('#logo img'+(document.documentElement.classList.contains('intro')?',.ab-food':''))];let n=0;
   const go=()=>{if(document.body.classList.contains('ready'))return;requestAnimationFrame(()=>document.body.classList.add('ready'))};
   lays.forEach(i=>{if(i.complete)n++;else i.addEventListener('load',()=>{if(++n>=lays.length)go()},{once:true})});
   if(n>=lays.length)go(); setTimeout(go,700);
@@ -564,7 +562,7 @@ html.intro .ready .zap{animation-delay:2.7s}
     const fim=()=>{ab.classList.add('fim');};
     ab.querySelector('.cortina').addEventListener('animationend',e=>{if(e.animationName==='ab-sobe')fim()});
     ab.addEventListener('click',()=>{document.documentElement.classList.remove('intro');fim()});
-    setTimeout(fim,3500);
+    setTimeout(fim,3200);
   }
 
   // chapa ligada (horário Vila Peri, fuso Fortaleza)
