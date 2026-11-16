@@ -54,18 +54,22 @@ button{font:inherit;color:inherit}
 .linha img{position:absolute;inset:0;width:100%;height:100%}
 .l1{clip-path:inset(20% 0 47.8% 0)}
 .l2{clip-path:inset(52.2% 0 18.5% 0)}
-html.js .ly-bl,html.js .ly-br{clip-path:inset(0 0 100% 0)}
-html.js .linha img{transform:translateY(18%)}
-html.js .ly-crown,html.js .ly-script{clip-path:inset(0 100% 0 0)}
-html.js .entra{opacity:0;transform:translateY(14px)}
-.ready .ly-bl{animation:risca .4s cubic-bezier(.4,0,.2,1) .05s forwards}
-.ready .ly-br{animation:risca .4s cubic-bezier(.4,0,.2,1) .05s forwards}
-.ready .l1 img{animation:sobe .45s cubic-bezier(.16,1,.3,1) .1s forwards}
-.ready .l2 img{animation:sobe .45s cubic-bezier(.16,1,.3,1) .16s forwards}
-.ready .ly-crown{animation:risca .35s cubic-bezier(.4,0,.2,1) .3s forwards}
-.ready .ly-script{animation:risca .4s cubic-bezier(.4,0,.2,1) .34s forwards}
-.ready .entra{animation:entra .45s cubic-bezier(.16,1,.3,1) forwards}
-.ready .entra.e1{animation-delay:.45s}.ready .entra.e2{animation-delay:.55s}.ready .entra.e3{animation-delay:.05s}
+/* abertura: a coroação */
+html.js .corpo{opacity:0;transform:scale(.965)}
+html.js .ly-crown{opacity:0;transform:translateY(-60%) rotate(-8deg)}
+.ly-crown{transform-origin:50% 18%}
+html.js .ly-dots{opacity:0;transform:translateY(-3%)}
+html.js .topo-faixa{opacity:0}
+html.js .entra{opacity:0;transform:translateY(12px)}
+.ready .corpo{animation:corpo 1s cubic-bezier(.22,1,.36,1) .1s forwards}
+.ready .ly-crown{animation:coroacao 1.25s cubic-bezier(.22,1,.36,1) .5s forwards}
+.ready .ly-dots{animation:pontos .6s ease-out 1.3s forwards}
+.ready .topo-faixa{animation:aparece .9s ease 1.2s forwards,faixa 26s linear infinite}
+.ready .entra{animation:entra .7s cubic-bezier(.22,1,.36,1) forwards}
+.ready .entra.e1{animation-delay:1.35s}.ready .entra.e2{animation-delay:1.5s}
+@keyframes corpo{to{opacity:1;transform:none}}
+@keyframes coroacao{0%{opacity:0;transform:translateY(-60%) rotate(-8deg)}30%{opacity:1}100%{opacity:1;transform:none}}
+@keyframes pontos{to{opacity:1;transform:none}}
 @keyframes risca{to{clip-path:inset(0 0 0 0)}}
 @keyframes sobe{to{transform:none}}
 @keyframes entra{to{opacity:1;transform:none}}
@@ -113,7 +117,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 .nivel b{color:#fff;font-variant-numeric:tabular-nums}
 .nivel.pop{animation:pop .35s cubic-bezier(.3,1.8,.5,1)}
 @keyframes pop{40%{transform:translateX(-50%) scale(1.18)}}
-.food{position:absolute;left:50%;bottom:0;width:92%;transform-origin:50% 92%;transition:opacity .16s, transform .22s cubic-bezier(.3,1.4,.5,1);will-change:transform,opacity;opacity:0;filter:drop-shadow(0 26px 22px rgba(0,0,0,.45));pointer-events:none}
+.food{position:absolute;left:50%;bottom:0;width:92%;transform-origin:50% 92%;transition:opacity .16s, transform .22s cubic-bezier(.3,1.4,.5,1);will-change:transform,opacity;opacity:0;pointer-events:none}
 .food.on{opacity:1}
 .food.fritas{width:50%;left:auto;right:-10%;bottom:-8px;transform-origin:50% 100%;z-index:3}
 .food.onion{width:64%;left:-9%;bottom:18px;transform-origin:50% 100%;z-index:1}
@@ -146,8 +150,11 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 .ticket{position:relative;margin:-60px 10px 0;background:#fff;color:#000;border-radius:18px;padding:18px 18px 16px;z-index:2;box-shadow:0 22px 40px -14px rgba(0,0,0,.8)}
 .ticket::before,.ticket::after{content:"";position:absolute;top:58%;width:22px;height:22px;border-radius:50%;background:#000}
 .ticket::before{left:-11px}.ticket::after{right:-11px}
-.ticket .valor{display:flex;align-items:flex-end;gap:8px}
-.ticket .valor .anton{font-size:58px;color:var(--lj);line-height:.85}
+.ticket .valor{display:flex;align-items:flex-end;gap:12px}
+.preco{display:flex;align-items:flex-start;color:var(--lj);line-height:1}
+.moeda{font-weight:900;font-size:20px;margin-top:6px;margin-right:3px}
+.preco .num{font-size:62px;line-height:.8}
+.off{font-weight:900;font-stretch:115%;font-size:20px;align-self:flex-end;margin-left:4px;margin-bottom:-2px}
 .ticket .valor small{font-weight:900;font-stretch:115%;font-size:12.5px;line-height:1.15;padding-bottom:4px;text-transform:uppercase}
 .corte{border-top:2px dashed #cfcfcf;margin:14px -4px 14px}
 .cod-box{display:flex;flex-direction:column;align-items:center;border:2px dashed #000;border-radius:14px;padding:8px 10px 10px;background:#fff6ec}
@@ -199,10 +206,11 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 
 /* ===== GALERIA ===== */
 .galeria{padding:44px 0 40px}
-.trilho{display:flex;gap:12px;width:max-content;animation:trilho 55s linear infinite;transform:rotate(-3deg)}
-.trilho img{width:190px;aspect-ratio:9/14;object-fit:cover;border-radius:18px}
-.trilho:hover{animation-play-state:paused}
-@keyframes trilho{to{translate:-50% 0}}
+.trilhos{transform:rotate(-3deg)}
+.trilho{display:flex;width:max-content;animation:trilho 50s linear infinite;will-change:transform;transform:translate3d(0,0,0)}
+.trilho img{width:190px;aspect-ratio:9/14;object-fit:cover;border-radius:18px;margin-right:12px;flex:none;background:#151515}
+
+@keyframes trilho{from{transform:translate3d(0,0,0)}to{transform:translate3d(-33.3333%,0,0)}}
 
 /* ===== RODAPÉ ===== */
 .rodape{padding:40px 22px 34px;text-align:center}
@@ -297,7 +305,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   .lembrete .lb{font-size:15px;padding:16px 20px;border-radius:16px}
 }
 @media (prefers-reduced-motion:reduce){
-  html.js .ly-bl,html.js .ly-br,html.js .ly-crown,html.js .ly-script{clip-path:none!important}html.js .linha img,html.js .entra{transform:none!important;opacity:1!important}
+  html.js .ly-crown,html.js .ly-dots,html.js .corpo,html.js .topo-faixa{opacity:1!important;transform:none!important}html.js .linha img,html.js .entra{transform:none!important;opacity:1!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
 }
 </style>
@@ -306,17 +314,20 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 <div class="grain"></div>
 <div class="app">
 
-  <div class="faixa"></div>
+  <div class="faixa topo-faixa"></div>
   <!-- HERO -->
   <section class="hero">
     <div class="palco-logo">
       <div class="logo" id="logo" role="img" aria-label="Exagerados Burguer">
-        <img class="ly ly-bl" src="assets/img/L_bl.webp" alt="">
-        <img class="ly ly-br" src="assets/img/L_br.webp" alt="">
-        <div class="ly linha l1"><img src="assets/img/L_exage.webp" alt=""></div>
-        <div class="ly linha l2"><img src="assets/img/L_rados.webp" alt=""></div>
+        <div class="ly corpo">
+          <img class="ly ly-bl" src="assets/img/L_bl.webp" alt="">
+          <img class="ly ly-br" src="assets/img/L_br.webp" alt="">
+          <div class="ly linha l1"><img src="assets/img/L_exage.webp" alt=""></div>
+          <div class="ly linha l2"><img src="assets/img/L_rados.webp" alt=""></div>
+          <img class="ly ly-script" src="assets/img/L_script.webp" alt="">
+        </div>
+        <img class="ly ly-dots" src="assets/img/L_dots.webp" alt="">
         <img class="ly ly-crown" src="assets/img/L_crown.webp" alt="">
-        <img class="ly ly-script" src="assets/img/L_script.webp" alt="">
       </div>
     </div>
 
@@ -361,7 +372,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
     <div class="desc"><p id="desc"></p></div>
     <a class="btn preto" href="https://estabelecimentos.thelinksti.com.br/exagerados" target="_blank" rel="noopener">
       <span class="ic"><img src="assets/img/icon_burger.png" alt=""></span>
-      <span class="tx"><span class="t1" id="ctaFome">Quero esse agora</span><span class="t2">Cardápio digital</span></span>
+      <span class="tx"><span class="t1" id="ctaFome">Quero esse</span><span class="t2">Cardápio digital</span></span>
       <svg class="seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
     </div>
@@ -373,12 +384,12 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   <!-- CUPOM -->
   <section class="cupom rv">
     <div class="cup-txt"><div class="kicker">Primeiro pedido?</div>
-    <h2 class="titulo anton">Começa<br>exagerando:<br><span class="lj">R$ 10 OFF</span></h2></div>
+    <h2 class="titulo anton">Começa<br><span class="lj">exagerando</span></h2></div>
     <div class="video-card">
       <video src="assets/video/queijo.mp4" poster="assets/video/queijo.jpg" autoplay muted loop playsinline preload="auto"></video>
     </div>
     <div class="ticket">
-      <div class="valor"><span class="anton">R$10</span><small>off no seu primeiro<br>pedido no cardápio digital</small></div>
+      <div class="valor"><span class="preco"><span class="moeda">R$</span><span class="anton num">10</span><span class="off">OFF</span></span><small>no seu primeiro<br>pedido no cardápio digital</small></div>
       <div class="corte"></div>
       <div class="cod-box"><span class="cod-lbl">Cupom</span><span class="anton cod-txt">QUEROEXAGERAR</span></div>
       <button class="copiar" id="copiar" type="button">
@@ -431,7 +442,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 
   <!-- GALERIA -->
   <section class="galeria" aria-label="Fotos">
-    <div class="trilho" id="trilho"></div>
+    <div class="trilhos"><div class="trilho" id="trilho"></div></div>
   </section>
 
   <!-- RODAPÉ -->
@@ -489,7 +500,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   const lays=[...document.querySelectorAll('#logo img')];let n=0;
   const go=()=>{if(document.body.classList.contains('ready'))return;requestAnimationFrame(()=>document.body.classList.add('ready'))};
   lays.forEach(i=>{if(i.complete)n++;else i.addEventListener('load',()=>{if(++n>=lays.length)go()},{once:true})});
-  if(n>=lays.length)go(); setTimeout(go,900);
+  if(n>=lays.length)go(); setTimeout(go,1200);
 
   // chapa ligada (horário Vila Peri, fuso Fortaleza)
   try{
@@ -501,7 +512,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   // medidor de fome
   const r=$('fome'),foods=[...document.querySelectorAll('.food')],pal=$('palavra'),marcas=[...$('marcas').children];
   const N=[
-    {n:'Fominha',d:'Pão árabe recheado até a borda: carne, bacon, queijo e muito molho. Exagerado do jeito dele.',c:'Quero esse agora'},
+    {n:'Fominha',d:'Pão árabe recheado até a borda: carne, bacon, queijo e muito molho. Exagerado do jeito dele.',c:'Quero esse'},
     {n:'Fome',d:'D’Maior: blend suculento, bacon crocante, cheddar e cebola caramelizada.',c:'Quero exagerar'},
     {n:'Exagerada',d:'Burger triplo, Onionburguer e fritas com cheddar e bacon. Aqui a fome não tem limite.',c:'Exagerar agora'}
   ];
@@ -565,7 +576,8 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 
   // galeria: 6 fotos diferentes
   const fotos=['mulher','fritas','familia','calda','maos','arabe'];
-  $('trilho').innerHTML=fotos.concat(fotos).map(f=>'<img src="assets/img/'+f+'.webp" alt="" decoding="async">').join('');
+  $('trilho').innerHTML=fotos.concat(fotos,fotos).map(f=>'<img src="assets/img/'+f+'.webp" alt="" loading="eager" decoding="sync">').join('');
+  fotos.forEach(f=>{const i=new Image();i.src='assets/img/'+f+'.webp';i.decode&&i.decode().catch(()=>{})});
 
   // revelar
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
