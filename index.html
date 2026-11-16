@@ -22,7 +22,7 @@
 <link rel="preload" href="assets/img/L_rados.webp" as="image">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
-<script>(function(){var d=document.documentElement;d.classList.add("js");try{var r=matchMedia("(prefers-reduced-motion:reduce)").matches;if(!r&&!sessionStorage.getItem("exg-intro")){d.classList.add("intro");sessionStorage.setItem("exg-intro","1")}}catch(e){}})()</script>
+<script>(function(){var d=document.documentElement;d.classList.add("js");try{var r=matchMedia("(prefers-reduced-motion:reduce)").matches;if(!r){d.classList.add("intro")}}catch(e){}})()</script>
 <style>
 @font-face{font-family:"Anton";src:url(assets/fonts/anton.woff2) format("woff2");font-display:swap}
 @font-face{font-family:"Archivo";src:url(assets/fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
@@ -201,6 +201,9 @@ html.js .entra{opacity:0;transform:translateY(12px)}
 .som .w2{animation-delay:.25s}.som .w3{animation-delay:.5s}
 @keyframes onda{0%,100%{opacity:0}40%,70%{opacity:1}}
 .som.ativo{background:#fff}
+.asmr .vid{cursor:pointer}
+.ouvir{position:absolute;left:50%;bottom:112px;transform:translateX(-50%);background:rgba(0,0,0,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;border-radius:99px;white-space:nowrap;transition:opacity .3s;pointer-events:none}
+.ouvir.off{opacity:0}
 .som.ativo::before,.som.ativo::after{border-color:#fff;animation-duration:1.1s}
 .som.ativo .w{animation-duration:.7s}
 
@@ -310,16 +313,21 @@ html.intro .abertura{display:block;position:fixed;inset:0;z-index:200;pointer-ev
 .cortina{position:absolute;inset:0;background:var(--lj);will-change:transform}
 .queijo{position:absolute;left:0;top:100%;width:100%;height:150px;transform-origin:50% 0;transform:scaleY(.25);margin-top:-1px}
 .queijo path{fill:var(--lj)}
-.ab-fome{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-family:"Archivo";font-weight:900;font-stretch:125%;color:#000;line-height:.78;text-align:center;font-size:min(42vw,230px);letter-spacing:-.02em;opacity:0}
-.ab-fome span{display:block}
-.ab-food{position:absolute;left:50%;top:58%;width:min(78vw,440px);transform:translate(-50%,-50%) scale(.6);opacity:0}
-html.intro .ab-fome{animation:ab-fome .5s cubic-bezier(.16,1,.3,1) .05s forwards}
-html.intro .ab-food.f1{animation:ab-flash .26s steps(1) .3s forwards;--s:.62}
-html.intro .ab-food.f2{animation:ab-flash .26s steps(1) .56s forwards;--s:.78}
-html.intro .ab-food.f3{animation:ab-flash .26s steps(1) .82s forwards;--s:.94}
-html.intro .ab-food.f4{animation:ab-last .5s cubic-bezier(.16,1,.3,1) 1.08s forwards;--s:1.08}
-html.intro .cortina{animation:ab-sobe .95s cubic-bezier(.76,0,.24,1) 1.55s forwards}
-html.intro .queijo{animation:ab-puxa .95s cubic-bezier(.5,0,.2,1) 1.55s forwards}
+.ab-carimbo{position:absolute;left:50%;top:max(56px,9vh);transform:translateX(-50%) rotate(-3deg);background:#000;border-radius:24px;padding:20px 28px 16px;text-align:left;opacity:0;white-space:nowrap;z-index:2}
+.ab-carimbo .c1{font-family:"Archivo";font-weight:900;font-stretch:118%;font-size:min(7.6vw,40px);line-height:.95;text-transform:uppercase;color:#fff}
+.ab-carimbo .c2{font-family:"Archivo";font-weight:900;font-stretch:125%;font-size:min(18vw,96px);line-height:.8;text-transform:uppercase;color:var(--lj);margin-top:4px}
+.ab-carimbo img{position:absolute;right:-22px;top:-44px;width:min(18vw,80px);transform:rotate(14deg) scale(.4);filter:brightness(0);opacity:0}
+html.intro .ab-carimbo{animation:ab-car .55s cubic-bezier(.16,1,.3,1) .05s forwards}
+html.intro .ab-carimbo img{animation:ab-coroa .5s cubic-bezier(.34,1.4,.64,1) .45s forwards}
+@keyframes ab-car{from{opacity:0;transform:translateX(-50%) rotate(-3deg) scale(1.25)}to{opacity:1;transform:translateX(-50%) rotate(-3deg) scale(1)}}
+@keyframes ab-coroa{to{opacity:1;transform:rotate(14deg) scale(1)}}
+.ab-food{position:absolute;left:50%;top:61%;width:min(78vw,440px);transform:translate(-50%,-50%) scale(.6);opacity:0}
+html.intro .ab-food.f1{animation:ab-flash .24s steps(1) .5s forwards;--s:.62}
+html.intro .ab-food.f2{animation:ab-flash .24s steps(1) .74s forwards;--s:.78}
+html.intro .ab-food.f3{animation:ab-flash .24s steps(1) .98s forwards;--s:.94}
+html.intro .ab-food.f4{animation:ab-last .5s cubic-bezier(.16,1,.3,1) 1.22s forwards;--s:1.08}
+html.intro .cortina{animation:ab-sobe .95s cubic-bezier(.76,0,.24,1) 1.75s forwards}
+html.intro .queijo{animation:ab-puxa .95s cubic-bezier(.5,0,.2,1) 1.75s forwards}
 @keyframes ab-fome{from{opacity:0;transform:translate(-50%,-50%) scale(1.25)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes ab-flash{0%{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}100%{opacity:0}}
 @keyframes ab-last{from{opacity:1;transform:translate(-50%,-50%) scale(calc(var(--s) - .12))}to{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}}
@@ -327,13 +335,13 @@ html.intro .queijo{animation:ab-puxa .95s cubic-bezier(.5,0,.2,1) 1.55s forwards
 @keyframes ab-puxa{0%{transform:scaleY(.25)}55%{transform:scaleY(1.5)}100%{transform:scaleY(.8)}}
 .abertura.fim{display:none!important}
 /* com a abertura, a coroa espera a cortina subir */
-html.intro .ready .corpo{animation-delay:1.7s}
-html.intro .ready .ly-crown{animation-delay:2s}
-html.intro .ready .ly-dots{animation-delay:2.75s}
-html.intro .ready .topo-faixa{animation-delay:2.5s,0s}
-html.intro .ready .entra.e1{animation-delay:2.6s}
-html.intro .ready .entra.e2{animation-delay:2.72s}
-html.intro .ready .zap{animation-delay:2.9s}
+html.intro .ready .corpo{animation-delay:1.9s}
+html.intro .ready .ly-crown{animation-delay:2.2s}
+html.intro .ready .ly-dots{animation-delay:2.95s}
+html.intro .ready .topo-faixa{animation-delay:2.7s,0s}
+html.intro .ready .entra.e1{animation-delay:2.8s}
+html.intro .ready .entra.e2{animation-delay:2.92s}
+html.intro .ready .zap{animation-delay:3.1s}
 @media (prefers-reduced-motion:reduce){
   html.js .ly-crown,html.js .ly-dots,html.js .corpo,html.js .topo-faixa{opacity:1!important;transform:none!important}html.js .linha img,html.js .entra{transform:none!important;opacity:1!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
@@ -344,7 +352,7 @@ html.intro .ready .zap{animation-delay:2.9s}
 <div class="grain"></div>
 <div class="abertura" id="abertura" aria-hidden="true">
   <div class="cortina">
-    <div class="ab-fome"><span>FO</span><span>ME</span></div>
+    <div class="ab-carimbo"><img src="assets/img/crown.png" alt=""><div class="c1">Do tamanho<br>da sua</div><div class="c2">Fome</div></div>
     <img class="ab-food f1" src="assets/img/cut_arabe.webp" alt="">
     <img class="ab-food f2" src="assets/img/cut_a.webp" alt="">
     <img class="ab-food f3" src="assets/img/cut_b.webp" alt="">
@@ -474,6 +482,7 @@ html.intro .ready .zap{animation-delay:2.9s}
   <section class="asmr rv">
     <div class="vid">
       <video id="asmr" src="assets/video/asmr.mp4" poster="assets/video/asmr.jpg" autoplay muted loop playsinline preload="auto"></video>
+      <span class="ouvir" id="ouvir">Toque para ouvir</span>
       <button class="som" id="som" type="button" aria-label="Ativar som">
         <svg viewBox="0 0 24 24"><path d="M3.5 9.5h3.5l5-4v13l-5-4H3.5Z" fill="#000"/><path class="w w1" d="M15 9.5a3.5 3.5 0 0 1 0 5"/><path class="w w2" d="M17.3 7.3a6.7 6.7 0 0 1 0 9.4"/><path class="w w3" d="M19.6 5a10 10 0 0 1 0 14"/></svg>
       </button>
@@ -548,7 +557,7 @@ html.intro .ready .zap{animation-delay:2.9s}
     const fim=()=>{ab.classList.add('fim');};
     ab.querySelector('.cortina').addEventListener('animationend',e=>{if(e.animationName==='ab-sobe')fim()});
     ab.addEventListener('click',()=>{document.documentElement.classList.remove('intro');fim()});
-    setTimeout(fim,3200);
+    setTimeout(fim,3400);
   }
 
   // chapa ligada (horário Vila Peri, fuso Fortaleza)
@@ -605,7 +614,7 @@ html.intro .ready .zap{animation-delay:2.9s}
   // som ASMR
   const v=$('asmr'),sb=$('som');
   let querSom=true,naTela=false,liberado=false;
-  const ui=()=>{sb.classList.toggle('ativo',!v.muted);sb.setAttribute('aria-label',v.muted?'Ativar som':'Desativar som')};
+  const ui=()=>{sb.classList.toggle('ativo',!v.muted);$('ouvir').classList.toggle('off',!v.muted);sb.setAttribute('aria-label',v.muted?'Ativar som':'Desativar som')};
   const mudo=()=>{v.muted=true;v.play().catch(()=>{});ui()};
   async function comSom(){
     if(!querSom)return;
@@ -613,13 +622,15 @@ html.intro .ready .zap{animation-delay:2.9s}
     try{await v.play();if(v.paused||v.muted)throw 0}catch(e){mudo();return}
     ui();
   }
+  try{v.preload='auto';v.load();v.muted=true;v.play().catch(()=>{})}catch(e){}
   // som liga sozinho ao chegar na seção (quando o navegador permite) e desliga ao sair
   new IntersectionObserver(es=>es.forEach(e=>{naTela=e.isIntersecting;if(naTela)comSom();else mudo()}),{threshold:.55}).observe(v);
   // primeiro toque em qualquer lugar da página libera o áudio do vídeo (iPhone e Android)
-  const libera=ev=>{if(liberado||(ev&&ev.target&&ev.target.closest&&ev.target.closest('#som')))return;liberado=true;
+  const libera=ev=>{if(liberado||(ev&&ev.target&&ev.target.closest&&ev.target.closest('.asmr .vid')))return;liberado=true;
     if(naTela){comSom();return}
     v.muted=false;v.play().then(()=>{if(!naTela){v.muted=true}ui()}).catch(()=>mudo());};
   ['touchend','click','keydown'].forEach(ev=>document.addEventListener(ev,libera,{passive:true,capture:true}));
+  v.closest('.vid').addEventListener('click',e=>{if(e.target.closest('#som'))return;sb.click()});
   sb.addEventListener('click',e=>{e.stopPropagation();liberado=true;
     if(v.muted){querSom=true;v.muted=false;v.currentTime=0;v.play().catch(()=>mudo())}else{querSom=false;v.muted=true}ui()});
 
