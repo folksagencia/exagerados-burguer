@@ -115,14 +115,15 @@ html.js .entra{opacity:0;transform:translateY(12px)}
 .medidor h2{font-size:15px;font-weight:900;font-stretch:118%;text-transform:uppercase;text-align:center;letter-spacing:.02em}
 .medidor .sub{font-size:13px;text-align:center;font-weight:600;margin-top:4px;opacity:.75}
 .palco{position:relative;height:440px;margin-top:6px}
-.palavra{position:absolute;left:50%;top:38%;transition:font-size .12s, font-stretch .12s;transform:translate(-50%,-50%);font-family:"Archivo";font-weight:900;color:#000;line-height:.8;text-align:center;white-space:nowrap;pointer-events:none}
+.palavra{position:absolute;left:50%;top:38%;font-size:210px;font-stretch:125%;transform-origin:50% 50%;transform:translate(-50%,-50%) scale(.48,.48);font-family:"Archivo";font-weight:900;color:#000;line-height:.8;text-align:center;white-space:nowrap;pointer-events:none}
 .palavra span{display:block}
 .nivel{position:absolute;top:8px;left:50%;transform:translateX(-50%);background:#000;color:var(--lj);font-weight:900;font-stretch:115%;font-size:13px;letter-spacing:.06em;padding:7px 14px;border-radius:99px;text-transform:uppercase;white-space:nowrap;z-index:6;display:flex;gap:8px}
 .nivel b{color:#fff;font-variant-numeric:tabular-nums}
 .nivel.pop{animation:pop .35s cubic-bezier(.3,1.8,.5,1)}
 @keyframes pop{40%{transform:translateX(-50%) scale(1.18)}}
-.food{position:absolute;left:50%;bottom:0;width:92%;transform-origin:50% 92%;transition:opacity .16s, transform .22s cubic-bezier(.3,1.4,.5,1);will-change:transform,opacity;opacity:0;pointer-events:none}
-.food.on{opacity:1}
+.food{position:absolute;left:50%;bottom:0;width:92%;transform-origin:50% 92%;transition:none;opacity:0;visibility:hidden;pointer-events:none;backface-visibility:hidden}
+.food.on{opacity:1;visibility:visible;animation:surge .16s ease-out}
+@keyframes surge{from{opacity:.4}to{opacity:1}}
 .food.fritas{width:50%;left:auto;right:-10%;bottom:-8px;transform-origin:50% 100%;z-index:3}
 .food.onion{width:64%;left:-9%;bottom:18px;transform-origin:50% 100%;z-index:1}
 .food.triplo{width:74%;z-index:2}
@@ -584,7 +585,7 @@ html.intro .ready .zap{animation-delay:2.4s}
   function upd(){
     const v=+r.value,lv=v<34?0:v<67?1:2,t=v/100,loc=lv===0?v/34:lv===1?(v-34)/33:(v-67)/33;
     r.style.setProperty('--p',v+'%');
-    pal.style.fontStretch=(62+63*t)+'%';pal.style.fontSize=(100+110*t)+'px';
+    pal.style.transform='translate(-50%,-50%) scale('+(.34+.66*t).toFixed(3)+','+(.48+.52*t).toFixed(3)+')';
     $('nvPct').textContent=v+'%';
     const sc=base[lv]+loc*ganho[lv];
     foods.forEach(f=>{
@@ -605,7 +606,7 @@ html.intro .ready .zap{animation-delay:2.4s}
       last=lv;
     }
   }
-  r.addEventListener('input',upd);upd();
+  let raf=0;r.addEventListener('input',()=>{if(!raf)raf=requestAnimationFrame(()=>{raf=0;upd()})});upd();
   marcas.forEach(m=>m.addEventListener('click',()=>{toc=true;r.value=m.dataset.v;upd()}));
   let toc=false;['pointerdown','touchstart','keydown','input'].forEach(ev=>r.addEventListener(ev,()=>{toc=true;r.classList.remove('pulsa')},{passive:true}));
   // cupom
