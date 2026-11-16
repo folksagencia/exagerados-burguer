@@ -34,7 +34,7 @@ a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 button{font:inherit;color:inherit}
 .app{width:var(--w);margin:0 auto;position:relative;overflow:hidden;background:#000}
-.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.07;mix-blend-mode:screen;
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.045;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 -.55'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .anton{font-family:"Anton",Impact,sans-serif;font-weight:400;text-transform:uppercase;line-height:.92}
 .lj{color:var(--lj)}
@@ -44,7 +44,7 @@ button{font:inherit;color:inherit}
 
 /* ===== HERO ===== */
 .hero{position:relative;padding:8px 22px 0;text-align:center}
-.zap{position:fixed;right:max(14px,calc(50vw - 240px + 14px));bottom:calc(16px + env(safe-area-inset-bottom));width:46px;height:46px;border-radius:50%;background:var(--verde);display:grid;place-items:center;z-index:81;box-shadow:0 8px 20px rgba(0,0,0,.5);opacity:0;animation:aparece .5s 1.6s forwards}
+.zap{position:fixed;right:max(14px,calc(50vw - 240px + 14px));bottom:calc(16px + env(safe-area-inset-bottom));width:46px;height:46px;border-radius:50%;background:var(--verde);display:grid;place-items:center;z-index:81;box-shadow:0 8px 20px rgba(0,0,0,.5);opacity:0;animation:aparece .4s .8s forwards}
 .zap svg{width:24px;height:24px;fill:#fff}
 @keyframes aparece{to{opacity:1}}
 
@@ -55,17 +55,17 @@ button{font:inherit;color:inherit}
 .l1{clip-path:inset(20% 0 47.8% 0)}
 .l2{clip-path:inset(52.2% 0 18.5% 0)}
 html.js .ly-bl,html.js .ly-br{clip-path:inset(0 0 100% 0)}
-html.js .linha img{transform:translateY(34%)}
+html.js .linha img{transform:translateY(18%)}
 html.js .ly-crown,html.js .ly-script{clip-path:inset(0 100% 0 0)}
 html.js .entra{opacity:0;transform:translateY(14px)}
-.ready .ly-bl{animation:risca .6s cubic-bezier(.5,0,.2,1) .15s forwards}
-.ready .ly-br{animation:risca .6s cubic-bezier(.5,0,.2,1) .25s forwards}
-.ready .l1 img{animation:sobe .7s cubic-bezier(.16,1,.3,1) .35s forwards}
-.ready .l2 img{animation:sobe .7s cubic-bezier(.16,1,.3,1) .48s forwards}
-.ready .ly-crown{animation:risca .55s cubic-bezier(.6,0,.3,1) .85s forwards}
-.ready .ly-script{animation:risca .7s cubic-bezier(.6,0,.3,1) 1.05s forwards}
-.ready .entra{animation:entra .6s cubic-bezier(.16,1,.3,1) forwards}
-.ready .entra.e1{animation-delay:1.45s}.ready .entra.e2{animation-delay:1.6s}.ready .entra.e3{animation-delay:.05s}
+.ready .ly-bl{animation:risca .4s cubic-bezier(.4,0,.2,1) .05s forwards}
+.ready .ly-br{animation:risca .4s cubic-bezier(.4,0,.2,1) .05s forwards}
+.ready .l1 img{animation:sobe .45s cubic-bezier(.16,1,.3,1) .1s forwards}
+.ready .l2 img{animation:sobe .45s cubic-bezier(.16,1,.3,1) .16s forwards}
+.ready .ly-crown{animation:risca .35s cubic-bezier(.4,0,.2,1) .3s forwards}
+.ready .ly-script{animation:risca .4s cubic-bezier(.4,0,.2,1) .34s forwards}
+.ready .entra{animation:entra .45s cubic-bezier(.16,1,.3,1) forwards}
+.ready .entra.e1{animation-delay:.45s}.ready .entra.e2{animation-delay:.55s}.ready .entra.e3{animation-delay:.05s}
 @keyframes risca{to{clip-path:inset(0 0 0 0)}}
 @keyframes sobe{to{transform:none}}
 @keyframes entra{to{opacity:1;transform:none}}
@@ -227,10 +227,10 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 .lembrete.sino .li{animation:sino .9s}
 @keyframes sino{15%{transform:rotate(-14deg)}30%{transform:rotate(12deg)}45%{transform:rotate(-8deg)}60%{transform:rotate(5deg)}75%{transform:none}}
 .lembrete .lt{flex:1;min-width:0}
-.lembrete .l1,.lembrete .l2{display:block}
-.lembrete .l1{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8d8d8d}
-.lembrete .l1 b{color:var(--lj)}
-.lembrete .l2{font-size:13.5px;font-weight:700;margin-top:2px;line-height:1.25}
+.lembrete .lm1,.lembrete .lm2{display:block}
+.lembrete .lm1{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#8d8d8d}
+.lembrete .lm1 b{color:var(--lj)}
+.lembrete .lm2{font-size:13.5px;font-weight:700;margin-top:2px;line-height:1.25}
 .lembrete .lb{flex:none;background:var(--lj);color:#000;font-weight:900;font-stretch:112%;font-size:12.5px;text-transform:uppercase;padding:11px 13px;border-radius:13px}
 .lembrete .lx{position:absolute;top:-9px;left:-6px;width:24px;height:24px;border-radius:50%;background:#2a2a2a;border:1px solid #3a3a3a;display:grid;place-items:center;cursor:pointer}
 .lembrete .lx svg{width:10px;height:10px;stroke:#ccc;stroke-width:2.6}
@@ -242,7 +242,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 
 @media (max-width:380px){
   .btn .t1{font-size:15.5px}.btn.main .t1{font-size:16px}.btn .t2{font-size:11.5px}
-  .lembrete .l1{white-space:nowrap}.lembrete .l2{font-size:12.5px}
+  .lembrete .lm1{white-space:nowrap}.lembrete .lm2{font-size:12.5px}
   .titulo{font-size:40px}.loja .nome{font-size:36px}
 }
 @media (min-width:520px){
@@ -250,45 +250,52 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   .app{box-shadow:0 0 0 1px #1d1d1d,0 0 80px #000}
 }
 
-/* ===== DESKTOP ===== */
-.painel{display:none}
+
+/* ===== DESKTOP: mesma identidade do mobile, em largura total ===== */
+.h-desk{display:none}
 @media (min-width:960px){
-  body{display:grid;grid-template-columns:1fr 480px;background:#000}
-  .app{margin:0;box-shadow:-30px 0 60px rgba(0,0,0,.6)}
-  .painel{display:flex;flex-direction:column;position:sticky;top:0;height:100vh;background:var(--lj);color:#000;overflow:hidden}
-  .painel .faixa{flex:none;background-color:#000}
-  .p-in{position:relative;flex:1;padding:clamp(28px,4vw,56px)}
-  .p-topo{display:flex;align-items:center;gap:18px;position:relative;z-index:2}
-  .selo-logo{width:96px;height:96px;border-radius:50%;background:#000;display:grid;place-items:center;flex:none;box-shadow:0 10px 30px rgba(0,0,0,.25)}
-  .selo-logo img{width:62%}
-  .p-desde{font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.08em;line-height:1.3}
-  .p-tit{position:relative;z-index:5;margin-top:clamp(20px,5vh,60px);font-family:"Archivo";font-weight:900;text-transform:uppercase;line-height:.86}
-  .p1{display:block;font-stretch:118%;font-size:clamp(34px,3.6vw,64px)}
-  .p2{display:block;font-stretch:125%;font-size:clamp(90px,9.6vw,200px);letter-spacing:-.02em;color:#000}
-  .p-burger{position:absolute;right:-3%;bottom:-6%;width:min(38vw,60vh,560px);z-index:2;filter:drop-shadow(0 40px 40px rgba(0,0,0,.35));transform-origin:50% 100%}
-  .p-fritas{position:absolute;right:calc(min(38vw,60vh,560px) * .62);bottom:-4%;width:min(20vw,30vh,270px);z-index:3;transform:rotate(-10deg);filter:drop-shadow(0 24px 24px rgba(0,0,0,.35))}
-  .p-base{position:absolute;left:clamp(28px,4vw,56px);bottom:clamp(28px,4vw,56px);z-index:4;display:flex;flex-direction:column;gap:14px;max-width:300px}
-  .p-qr{display:flex;align-items:center;gap:14px;background:#000;color:#fff;border-radius:20px;padding:14px}
-  .p-qr svg{width:92px;height:92px;flex:none;border-radius:8px}
-  .p-qr b{display:block;font-weight:900;font-stretch:115%;text-transform:uppercase;font-size:15px;color:var(--lj)}
-  .p-qr span{display:block;font-size:12.5px;color:#cfcfcf;margin-top:4px;line-height:1.35}
-  .p-cta{display:flex;align-items:center;gap:12px;background:#fff;color:#000;border-radius:16px;padding:12px 16px;font-weight:900;font-stretch:112%;text-transform:uppercase;font-size:14px;transition:transform .15s}
-  .p-cta:hover{transform:translateY(-2px)}
-  .p-cta img{width:30px;filter:brightness(0)}
-  html.js .p-burger{opacity:0;transform:translateY(8%)}
-  html.js .p-fritas{opacity:0;transform:translateY(10%) rotate(-10deg)}
-  html.js .p-tit,html.js .p-topo,html.js .p-base{opacity:0;transform:translateY(16px)}
-  .ready .p-topo{animation:entra .7s cubic-bezier(.16,1,.3,1) .1s forwards}
-  .ready .p-tit{animation:entra .8s cubic-bezier(.16,1,.3,1) .25s forwards}
-  .ready .p-burger{animation:pburger 1s cubic-bezier(.16,1,.3,1) .45s forwards}
-  .ready .p-fritas{animation:pfritas 1s cubic-bezier(.16,1,.3,1) .65s forwards}
-  .ready .p-base{animation:entra .7s cubic-bezier(.16,1,.3,1) .9s forwards}
-  @keyframes pburger{to{opacity:1;transform:none}}
-  @keyframes pfritas{to{opacity:1;transform:rotate(-10deg)}}
-  .zap{right:14px}
-  .lembrete{left:auto;right:74px;width:396px}
+  :root{--w:100vw}
+  body{background:#000}
+  .app{width:100%;box-shadow:none}
+  .wrapd,.hero,.cupom,.lojas,.asmr,.rodape{max-width:1140px;margin-left:auto;margin-right:auto}
+  .hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:60px;padding:60px 48px 10px;text-align:left}
+  .palco-logo{width:100%;max-width:420px;margin:0 auto}
+  .h-desk{display:block;font-family:"Archivo";font-weight:900;font-stretch:118%;text-transform:uppercase;font-size:40px;line-height:.95}
+  .h-desk span{display:block;font-stretch:125%;font-size:112px;color:var(--lj);line-height:.85}
+  .hero-acoes .status{margin-top:26px}
+  .hero-acoes .btn.main{max-width:460px}
+  .pingo.p1{height:90px;margin-top:50px!important}
+  .pingo.p2{height:64px}
+  .medidor{padding:30px 48px 40px;display:grid;grid-template-columns:1.1fr 1fr;grid-template-areas:"palco cab" "palco ctrl";align-items:center;column-gap:40px;max-width:none}
+  .medidor>*{min-width:0}
+  .med-cab{grid-area:cab;align-self:end}
+  .med-ctrl{grid-area:ctrl;align-self:start}
+  .palco{grid-area:palco;height:540px;max-width:620px;width:100%;justify-self:end}
+  .medidor h2,.medidor .sub{text-align:left}
+  .medidor h2{font-size:34px}
+  .medidor .sub{font-size:16px}
+  .regua{margin:20px 0 0;max-width:520px}
+  .desc{text-align:left;margin:22px 0 0;max-width:520px}
+  .desc p{font-size:18px}
+  .btn.preto{margin:20px 0 0;max-width:520px}
+  .cupom{display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"txt video" "ticket video";gap:0 60px;align-items:center;padding:80px 48px 20px}
+  .cup-txt{grid-area:txt;align-self:end}
+  .cupom .titulo{font-size:72px}
+  .video-card{grid-area:video;margin:0;max-width:440px;justify-self:end;width:100%}
+  .ticket{grid-area:ticket;margin:24px 0 0;align-self:start;max-width:460px}
+  .lojas{padding:80px 48px 10px}
+  .lojas .titulo{font-size:72px}
+  .lojas-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .asmr{padding:70px 48px 0;max-width:520px}
+  .galeria{padding:70px 0 50px}
+  .trilho img{width:260px}
+  .rodape{padding:50px 48px 40px}
+  .zap{right:24px;bottom:24px;width:52px;height:52px}
+  .lembrete{left:auto;right:96px;bottom:26px;width:480px;padding:14px;gap:16px;border-radius:26px;border:1.5px solid var(--lj);box-shadow:0 24px 60px -10px rgba(0,0,0,.95),0 0 0 6px rgba(255,138,29,.12)}
+  .lembrete .li{width:60px;height:60px;border-radius:17px}.lembrete .li img{width:42px}
+  .lembrete .lm1{font-size:12px}.lembrete .lm2{font-size:18px;margin-top:4px}
+  .lembrete .lb{font-size:15px;padding:16px 20px;border-radius:16px}
 }
-@media (min-width:960px) and (max-height:700px){.p-qr{display:none}}
 @media (prefers-reduced-motion:reduce){
   html.js .ly-bl,html.js .ly-br,html.js .ly-crown,html.js .ly-script{clip-path:none!important}html.js .linha img,html.js .entra{transform:none!important;opacity:1!important}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}
@@ -297,25 +304,6 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 </head>
 <body>
 <div class="grain"></div>
-<aside class="painel" aria-hidden="false">
-  <div class="faixa"></div>
-  <div class="p-in">
-    <div class="p-topo">
-      <span class="selo-logo"><img src="assets/img/logo.png" alt="Exagerados Burguer"></span>
-      <span class="p-desde">Hambúrguer de verdade<br>desde 2020</span>
-    </div>
-    <h1 class="p-tit"><span class="p1">Do tamanho<br>da sua</span><span class="p2">Fome</span></h1>
-    <div class="p-base">
-      <div class="p-qr">
-        <svg viewBox="-2 -2 33 33"><rect x="-2" y="-2" width="33" height="33" fill="#fff"/><path d="M0,0H1V1H0zM1,0H2V1H1zM2,0H3V1H2zM3,0H4V1H3zM4,0H5V1H4zM5,0H6V1H5zM6,0H7V1H6zM12,0H13V1H12zM13,0H14V1H13zM14,0H15V1H14zM15,0H16V1H15zM16,0H17V1H16zM19,0H20V1H19zM22,0H23V1H22zM23,0H24V1H23zM24,0H25V1H24zM25,0H26V1H25zM26,0H27V1H26zM27,0H28V1H27zM28,0H29V1H28zM0,1H1V2H0zM6,1H7V2H6zM9,1H10V2H9zM10,1H11V2H10zM11,1H12V2H11zM13,1H14V2H13zM14,1H15V2H14zM15,1H16V2H15zM16,1H17V2H16zM17,1H18V2H17zM18,1H19V2H18zM20,1H21V2H20zM22,1H23V2H22zM28,1H29V2H28zM0,2H1V3H0zM2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM6,2H7V3H6zM9,2H10V3H9zM10,2H11V3H10zM11,2H12V3H11zM14,2H15V3H14zM16,2H17V3H16zM17,2H18V3H17zM19,2H20V3H19zM20,2H21V3H20zM22,2H23V3H22zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM28,2H29V3H28zM0,3H1V4H0zM2,3H3V4H2zM3,3H4V4H3zM4,3H5V4H4zM6,3H7V4H6zM10,3H11V4H10zM11,3H12V4H11zM12,3H13V4H12zM13,3H14V4H13zM15,3H16V4H15zM16,3H17V4H16zM18,3H19V4H18zM19,3H20V4H19zM22,3H23V4H22zM24,3H25V4H24zM25,3H26V4H25zM26,3H27V4H26zM28,3H29V4H28zM0,4H1V5H0zM2,4H3V5H2zM3,4H4V5H3zM4,4H5V5H4zM6,4H7V5H6zM11,4H12V5H11zM14,4H15V5H14zM15,4H16V5H15zM16,4H17V5H16zM18,4H19V5H18zM22,4H23V5H22zM24,4H25V5H24zM25,4H26V5H25zM26,4H27V5H26zM28,4H29V5H28zM0,5H1V6H0zM6,5H7V6H6zM8,5H9V6H8zM9,5H10V6H9zM11,5H12V6H11zM15,5H16V6H15zM18,5H19V6H18zM19,5H20V6H19zM20,5H21V6H20zM22,5H23V6H22zM28,5H29V6H28zM0,6H1V7H0zM1,6H2V7H1zM2,6H3V7H2zM3,6H4V7H3zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM14,6H15V7H14zM16,6H17V7H16zM18,6H19V7H18zM20,6H21V7H20zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM25,6H26V7H25zM26,6H27V7H26zM27,6H28V7H27zM28,6H29V7H28zM10,7H11V8H10zM12,7H13V8H12zM13,7H14V8H13zM15,7H16V8H15zM16,7H17V8H16zM17,7H18V8H17zM18,7H19V8H18zM19,7H20V8H19zM0,8H1V9H0zM3,8H4V9H3zM5,8H6V9H5zM6,8H7V9H6zM8,8H9V9H8zM11,8H12V9H11zM14,8H15V9H14zM20,8H21V9H20zM21,8H22V9H21zM23,8H24V9H23zM1,9H2V10H1zM4,9H5V10H4zM7,9H8V10H7zM8,9H9V10H8zM9,9H10V10H9zM11,9H12V10H11zM13,9H14V10H13zM16,9H17V10H16zM17,9H18V10H17zM18,9H19V10H18zM20,9H21V10H20zM21,9H22V10H21zM22,9H23V10H22zM25,9H26V10H25zM28,9H29V10H28zM0,10H1V11H0zM3,10H4V11H3zM4,10H5V11H4zM6,10H7V11H6zM7,10H8V11H7zM10,10H11V11H10zM11,10H12V11H11zM13,10H14V11H13zM14,10H15V11H14zM16,10H17V11H16zM17,10H18V11H17zM18,10H19V11H18zM19,10H20V11H19zM21,10H22V11H21zM23,10H24V11H23zM25,10H26V11H25zM26,10H27V11H26zM27,10H28V11H27zM8,11H9V12H8zM9,11H10V12H9zM10,11H11V12H10zM11,11H12V12H11zM12,11H13V12H12zM13,11H14V12H13zM15,11H16V12H15zM19,11H20V12H19zM23,11H24V12H23zM26,11H27V12H26zM27,11H28V12H27zM0,12H1V13H0zM1,12H2V13H1zM5,12H6V13H5zM6,12H7V13H6zM9,12H10V13H9zM10,12H11V13H10zM11,12H12V13H11zM14,12H15V13H14zM16,12H17V13H16zM17,12H18V13H17zM18,12H19V13H18zM21,12H22V13H21zM22,12H23V13H22zM25,12H26V13H25zM27,12H28V13H27zM28,12H29V13H28zM1,13H2V14H1zM5,13H6V14H5zM7,13H8V14H7zM8,13H9V14H8zM11,13H12V14H11zM12,13H13V14H12zM13,13H14V14H13zM14,13H15V14H14zM19,13H20V14H19zM20,13H21V14H20zM0,14H1V15H0zM3,14H4V15H3zM4,14H5V15H4zM6,14H7V15H6zM8,14H9V15H8zM9,14H10V15H9zM10,14H11V15H10zM11,14H12V15H11zM12,14H13V15H12zM13,14H14V15H13zM14,14H15V15H14zM16,14H17V15H16zM22,14H23V15H22zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM27,14H28V15H27zM28,14H29V15H28zM0,15H1V16H0zM3,15H4V16H3zM7,15H8V16H7zM8,15H9V16H8zM11,15H12V16H11zM12,15H13V16H12zM16,15H17V16H16zM17,15H18V16H17zM21,15H22V16H21zM22,15H23V16H22zM23,15H24V16H23zM25,15H26V16H25zM27,15H28V16H27zM0,16H1V17H0zM3,16H4V17H3zM4,16H5V17H4zM6,16H7V17H6zM10,16H11V17H10zM11,16H12V17H11zM12,16H13V17H12zM13,16H14V17H13zM15,16H16V17H15zM17,16H18V17H17zM19,16H20V17H19zM20,16H21V17H20zM21,16H22V17H21zM27,16H28V17H27zM2,17H3V18H2zM5,17H6V18H5zM7,17H8V18H7zM8,17H9V18H8zM9,17H10V18H9zM11,17H12V18H11zM13,17H14V18H13zM14,17H15V18H14zM18,17H19V18H18zM21,17H22V18H21zM22,17H23V18H22zM23,17H24V18H23zM25,17H26V18H25zM28,17H29V18H28zM0,18H1V19H0zM2,18H3V19H2zM3,18H4V19H3zM4,18H5V19H4zM5,18H6V19H5zM6,18H7V19H6zM7,18H8V19H7zM8,18H9V19H8zM9,18H10V19H9zM14,18H15V19H14zM16,18H17V19H16zM17,18H18V19H17zM22,18H23V19H22zM24,18H25V19H24zM27,18H28V19H27zM28,18H29V19H28zM8,19H9V20H8zM9,19H10V20H9zM14,19H15V20H14zM15,19H16V20H15zM17,19H18V20H17zM19,19H20V20H19zM22,19H23V20H22zM23,19H24V20H23zM24,19H25V20H24zM27,19H28V20H27zM28,19H29V20H28zM0,20H1V21H0zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM6,20H7V21H6zM9,20H10V21H9zM10,20H11V21H10zM11,20H12V21H11zM12,20H13V21H12zM15,20H16V21H15zM16,20H17V21H16zM20,20H21V21H20zM21,20H22V21H21zM22,20H23V21H22zM23,20H24V21H23zM24,20H25V21H24zM26,20H27V21H26zM8,21H9V22H8zM9,21H10V22H9zM12,21H13V22H12zM14,21H15V22H14zM16,21H17V22H16zM17,21H18V22H17zM20,21H21V22H20zM24,21H25V22H24zM26,21H27V22H26zM27,21H28V22H27zM28,21H29V22H28zM0,22H1V23H0zM1,22H2V23H1zM2,22H3V23H2zM3,22H4V23H3zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM10,22H11V23H10zM11,22H12V23H11zM12,22H13V23H12zM16,22H17V23H16zM20,22H21V23H20zM22,22H23V23H22zM24,22H25V23H24zM27,22H28V23H27zM0,23H1V24H0zM6,23H7V24H6zM8,23H9V24H8zM9,23H10V24H9zM12,23H13V24H12zM14,23H15V24H14zM15,23H16V24H15zM16,23H17V24H16zM18,23H19V24H18zM20,23H21V24H20zM24,23H25V24H24zM25,23H26V24H25zM26,23H27V24H26zM0,24H1V25H0zM2,24H3V25H2zM3,24H4V25H3zM4,24H5V25H4zM6,24H7V25H6zM9,24H10V25H9zM11,24H12V25H11zM16,24H17V25H16zM17,24H18V25H17zM20,24H21V25H20zM21,24H22V25H21zM22,24H23V25H22zM23,24H24V25H23zM24,24H25V25H24zM27,24H28V25H27zM28,24H29V25H28zM0,25H1V26H0zM2,25H3V26H2zM3,25H4V26H3zM4,25H5V26H4zM6,25H7V26H6zM8,25H9V26H8zM10,25H11V26H10zM11,25H12V26H11zM13,25H14V26H13zM17,25H18V26H17zM18,25H19V26H18zM19,25H20V26H19zM20,25H21V26H20zM22,25H23V26H22zM24,25H25V26H24zM25,25H26V26H25zM26,25H27V26H26zM27,25H28V26H27zM0,26H1V27H0zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM6,26H7V27H6zM10,26H11V27H10zM11,26H12V27H11zM12,26H13V27H12zM14,26H15V27H14zM18,26H19V27H18zM19,26H20V27H19zM20,26H21V27H20zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM28,26H29V27H28zM0,27H1V28H0zM6,27H7V28H6zM10,27H11V28H10zM12,27H13V28H12zM13,27H14V28H13zM17,27H18V28H17zM19,27H20V28H19zM20,27H21V28H20zM27,27H28V28H27zM0,28H1V29H0zM1,28H2V29H1zM2,28H3V29H2zM3,28H4V29H3zM4,28H5V29H4zM5,28H6V29H5zM6,28H7V29H6zM8,28H9V29H8zM9,28H10V29H9zM11,28H12V29H11zM12,28H13V29H12zM14,28H15V29H14zM17,28H18V29H17zM20,28H21V29H20zM23,28H24V29H23zM24,28H25V29H24zM25,28H26V29H25zM27,28H28V29H27z" fill="#000"/></svg>
-        <div><b>Peça pelo celular</b><span>Aponte a câmera para o código e abra no seu celular</span></div>
-      </div>
-      <a class="p-cta" href="https://estabelecimentos.thelinksti.com.br/exagerados" target="_blank" rel="noopener"><img src="assets/img/icon_burger.png" alt="">Pedir no cardápio digital</a>
-    </div>
-    <img class="p-burger" src="assets/img/cut_triplo.webp" alt="">
-    <img class="p-fritas" src="assets/img/cut_c.webp" alt="">
-  </div>
-</aside>
 <div class="app">
 
   <div class="faixa"></div>
@@ -332,6 +320,8 @@ html.js .entra{opacity:0;transform:translateY(14px)}
       </div>
     </div>
 
+    <div class="hero-acoes">
+    <h2 class="h-desk entra e1">Do tamanho<br>da sua <span>fome</span></h2>
     <div class="status entra e1" id="status">
       <span class="radar"><i></i><i></i><i></i></span>
       <span class="st1" id="st1">Chapa ligada</span>
@@ -343,16 +333,17 @@ html.js .entra{opacity:0;transform:translateY(14px)}
       <span class="tx"><span class="t1">Pedir no cardápio digital</span><span class="t2">Mais vantajoso. Cupom no 1º pedido</span></span>
       <svg class="seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
+    </div>
   </section>
 
-  <svg class="pingo" viewBox="0 0 480 90" preserveAspectRatio="none" aria-hidden="true" style="margin-top:38px">
+  <svg class="pingo p1" viewBox="0 0 480 90" preserveAspectRatio="none" aria-hidden="true" style="margin-top:38px">
     <path d="M0 90V40c20 0 24 8 30 22 6 14 22 14 24-2 2-14 6-20 24-20s20 26 30 30 18-6 20-14 8-16 30-16 26 4 30 24 22 22 26 0 10-24 34-24 24 6 28 18 18 14 22 0 14-18 34-18 22 10 26 30 22 18 26 0 10-30 36-30 24 8 30 20 18 16 22 4 10-24 38-24V90Z"/>
   </svg>
 
   <!-- MEDIDOR DE FOME -->
   <section class="medidor" id="medidor">
-    <h2>Medidor de fome</h2>
-    <p class="sub">Arrasta a coroa e mostra o tamanho da sua fome</p>
+    <div class="med-cab"><h2>Medidor de fome</h2>
+    <p class="sub">Arrasta a coroa e mostra o tamanho da sua fome</p></div>
     <div class="palco" id="palco">
       <div class="nivel" id="nivel"><span id="nvNome">Fome</span><b id="nvPct">50%</b></div>
       <div class="palavra" id="palavra"><span>FO</span><span>ME</span></div>
@@ -362,6 +353,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
       <img class="food triplo" data-n="2" src="assets/img/cut_triplo.webp" alt="Burger triplo com bacon e cebola caramelizada">
       <img class="food fritas" data-n="2" src="assets/img/cut_c.webp" alt="Fritas com cheddar e bacon">
     </div>
+    <div class="med-ctrl">
     <div class="regua">
       <input type="range" id="fome" min="0" max="100" value="6" class="pulsa" aria-label="Tamanho da sua fome">
       <div class="marcas" id="marcas"><span data-v="12">Fominha</span><span data-v="50">Fome</span><span data-v="88">Exagerada</span></div>
@@ -372,15 +364,16 @@ html.js .entra{opacity:0;transform:translateY(14px)}
       <span class="tx"><span class="t1" id="ctaFome">Quero esse agora</span><span class="t2">Cardápio digital</span></span>
       <svg class="seta" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
+    </div>
   </section>
-  <svg class="pingo" viewBox="0 0 480 64" aria-hidden="true" style="margin-top:-1px">
+  <svg class="pingo p2" viewBox="0 0 480 64" preserveAspectRatio="none" aria-hidden="true" style="margin-top:-1px">
     <path d="M0 0H480V16H458v22a9 9 0 0 1-18 0V16H392v40a10 10 0 0 1-20 0V16H318v14a8 8 0 0 1-16 0V16H232v30a10 10 0 0 1-20 0V16H140v20a8 8 0 0 1-16 0V16H60v38a10 10 0 0 1-20 0V16H0Z"/>
   </svg>
 
   <!-- CUPOM -->
   <section class="cupom rv">
-    <div class="kicker">Primeiro pedido?</div>
-    <h2 class="titulo anton">Começa<br>exagerando:<br><span class="lj">R$ 10 OFF</span></h2>
+    <div class="cup-txt"><div class="kicker">Primeiro pedido?</div>
+    <h2 class="titulo anton">Começa<br>exagerando:<br><span class="lj">R$ 10 OFF</span></h2></div>
     <div class="video-card">
       <video src="assets/video/queijo.mp4" poster="assets/video/queijo.jpg" autoplay muted loop playsinline preload="auto"></video>
     </div>
@@ -402,6 +395,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   <section class="lojas">
     <div class="kicker rv">Escolha sua loja</div>
     <h2 class="titulo anton rv">Tem Exagerados<br>perto <span class="lj">de você</span></h2>
+    <div class="lojas-grid">
     <article class="loja rv">
       <div class="topo">
         <div><h3 class="nome anton">Maraponga</h3><p class="end">Praça Leonilson das Artes<br>(Praça da MRV), Maraponga</p></div>
@@ -422,6 +416,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
         <a class="mini star" href="https://www.google.com/search?q=Exagerados+Burguer+Villa+Food+Park&amp;oq=Exagerados+Burguer+Villa+Food+Park&amp;gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKAB0gEHODIzajBqN6gCALACAA&amp;sourceid=chrome&amp;source=chrome.ob&amp;ie=UTF-8#sv=CCYSvgIKEgoDdGJzEgtscmY6ITNzSUFFPQonCgFxEiJFeGFnZXJhZG9zIEJ1cmd1ZXIgVmlsbGEgRm9vZCBQYXJrCgcKA3VkbRIAEAEaEHB2LS9nLzExeTMyNzk0OHcqOQoNL2cvMTF5MzI3OTQ4dyIoCiJFeGFnZXJhZG9zIEJ1cmd1ZXIgVmlsbGEgRm9vZCBQYXJrEAIYAzKmAQoiRXhhZ2VyYWRvcyBCdXJndWVyIFZpbGxhIEZvb2QgUGFya0ibotKjjL2AgAhaMhAAEAEQAhADEAQYABgBIiJleGFnZXJhZG9zIGJ1cmd1ZXIgdmlsbGEgZm9vZCBwYXJrkgEUaGFtYnVyZ2VyX3Jlc3RhdXJhbnSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUklaMUJJVlZKM0VBRfoBBAgAEBUYCiC16cb0AQ" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="m12 2.8 2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2L2.9 9.4l6.3-.9Z"/></svg>Avaliar</a>
       </div>
     </article>
+  </div>
   </section>
 
   <!-- ASMR -->
@@ -452,7 +447,6 @@ html.js .entra{opacity:0;transform:translateY(14px)}
     </div>
   </footer>
   <div class="faixa"></div>
-  <div class="respiro"></div>
 </div>
 
 <a class="zap" href="https://wa.me/5585999003593?text=Ol%C3%A1%2C%20Exagerados!" target="_blank" rel="noopener" aria-label="WhatsApp">
@@ -462,7 +456,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 <div class="lembrete" id="lembrete" role="status">
   <button class="lx" id="lx" type="button" aria-label="Fechar lembrete"><svg viewBox="0 0 10 10"><path d="M1 1l8 8M9 1l-8 8"/></svg></button>
   <span class="li"><img src="assets/img/icon_burger.png" alt=""></span>
-  <span class="lt"><span class="l1">Lembrete <b>· agora</b></span><span class="l2" id="l2">Bateu a fome? Bora pedir.</span></span>
+  <span class="lt"><span class="lm1">Lembrete <b>· agora</b></span><span class="lm2" id="l2">Bateu a fome? Bora pedir.</span></span>
   <a class="lb" href="https://estabelecimentos.thelinksti.com.br/exagerados" target="_blank" rel="noopener">Pedir</a>
 </div>
 
@@ -495,7 +489,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   const lays=[...document.querySelectorAll('#logo img')];let n=0;
   const go=()=>{if(document.body.classList.contains('ready'))return;requestAnimationFrame(()=>document.body.classList.add('ready'))};
   lays.forEach(i=>{if(i.complete)n++;else i.addEventListener('load',()=>{if(++n>=lays.length)go()},{once:true})});
-  if(n>=lays.length)go(); setTimeout(go,1500);
+  if(n>=lays.length)go(); setTimeout(go,900);
 
   // chapa ligada (horário Vila Peri, fuso Fortaleza)
   try{
@@ -550,8 +544,24 @@ html.js .entra{opacity:0;transform:translateY(14px)}
 
   // som ASMR
   const v=$('asmr'),sb=$('som');
-  sb.addEventListener('click',()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play().catch(()=>{})}
-    sb.classList.toggle('ativo',!v.muted);sb.setAttribute('aria-label',v.muted?'Ativar som':'Desativar som')});
+  let querSom=true,naTela=false,liberado=false;
+  const ui=()=>{sb.classList.toggle('ativo',!v.muted);sb.setAttribute('aria-label',v.muted?'Ativar som':'Desativar som')};
+  const mudo=()=>{v.muted=true;v.play().catch(()=>{});ui()};
+  async function comSom(){
+    if(!querSom)return;
+    v.muted=false;
+    try{await v.play();if(v.paused||v.muted)throw 0}catch(e){mudo();return}
+    ui();
+  }
+  // som liga sozinho ao chegar na seção (quando o navegador permite) e desliga ao sair
+  new IntersectionObserver(es=>es.forEach(e=>{naTela=e.isIntersecting;if(naTela)comSom();else mudo()}),{threshold:.55}).observe(v);
+  // primeiro toque em qualquer lugar da página libera o áudio do vídeo (iPhone e Android)
+  const libera=ev=>{if(liberado||(ev&&ev.target&&ev.target.closest&&ev.target.closest('#som')))return;liberado=true;
+    if(naTela){comSom();return}
+    v.muted=false;v.play().then(()=>{if(!naTela){v.muted=true}ui()}).catch(()=>mudo());};
+  ['touchend','click','keydown'].forEach(ev=>document.addEventListener(ev,libera,{passive:true,capture:true}));
+  sb.addEventListener('click',e=>{e.stopPropagation();liberado=true;
+    if(v.muted){querSom=true;v.muted=false;v.currentTime=0;v.play().catch(()=>mudo())}else{querSom=false;v.muted=true}ui()});
 
   // galeria: 6 fotos diferentes
   const fotos=['mulher','fritas','familia','calda','maos','arabe'];
@@ -572,7 +582,7 @@ html.js .entra{opacity:0;transform:translateY(14px)}
   $('lx').addEventListener('click',()=>{fechado=true;lem.classList.remove('vis')});
 
   // vídeos: carregam já e tocam em loop contínuo
-  document.querySelectorAll('video').forEach(x=>{x.muted=true;x.play().catch(()=>{});
+  document.querySelectorAll('video').forEach(x=>{if(x.id!=='asmr')x.muted=true;x.play().catch(()=>{});
     x.addEventListener('pause',()=>{if(!document.hidden)x.play().catch(()=>{})});});
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)document.querySelectorAll('video').forEach(x=>x.play().catch(()=>{}))});
   // garante o play no primeiro toque (economia de bateria no iOS)
