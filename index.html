@@ -316,20 +316,20 @@ html.intro .abertura{display:block;position:fixed;inset:0;z-index:200;pointer-ev
 .ab-carimbo{position:absolute;left:50%;top:max(56px,9vh);transform:translateX(-50%) rotate(-3deg);background:#000;border-radius:24px;padding:20px 28px 16px;text-align:left;opacity:0;white-space:nowrap;z-index:2}
 .ab-carimbo .c1{font-family:"Archivo";font-weight:900;font-stretch:118%;font-size:min(7.6vw,40px);line-height:.95;text-transform:uppercase;color:#fff}
 .ab-carimbo .c2{font-family:"Archivo";font-weight:900;font-stretch:125%;font-size:min(18vw,96px);line-height:.8;text-transform:uppercase;color:var(--lj);margin-top:4px}
-.ab-carimbo img{position:absolute;right:-22px;top:-44px;width:min(18vw,80px);transform:rotate(14deg) scale(.4);filter:brightness(0);opacity:0}
+.ab-carimbo img{position:absolute;right:-24px;top:-46px;width:min(19vw,84px);transform:rotate(14deg) scale(.4);opacity:0;z-index:3;filter:drop-shadow(1.5px 0 0 #000) drop-shadow(-1.5px 0 0 #000) drop-shadow(0 1.5px 0 #000) drop-shadow(0 -1.5px 0 #000)}
 html.intro .ab-carimbo{animation:ab-car .55s cubic-bezier(.16,1,.3,1) .05s forwards}
 html.intro .ab-carimbo img{animation:ab-coroa .5s cubic-bezier(.34,1.4,.64,1) .45s forwards}
 @keyframes ab-car{from{opacity:0;transform:translateX(-50%) rotate(-3deg) scale(1.25)}to{opacity:1;transform:translateX(-50%) rotate(-3deg) scale(1)}}
 @keyframes ab-coroa{to{opacity:1;transform:rotate(14deg) scale(1)}}
-.ab-food{position:absolute;left:50%;top:61%;width:min(78vw,440px);transform:translate(-50%,-50%) scale(.6);opacity:0}
-html.intro .ab-food.f1{animation:ab-flash .24s steps(1) .5s forwards;--s:.62}
-html.intro .ab-food.f2{animation:ab-flash .24s steps(1) .74s forwards;--s:.78}
-html.intro .ab-food.f3{animation:ab-flash .24s steps(1) .98s forwards;--s:.94}
-html.intro .ab-food.f4{animation:ab-last .5s cubic-bezier(.16,1,.3,1) 1.22s forwards;--s:1.08}
+.ab-food{position:absolute;left:50%;top:62%;width:min(96vw,560px);transform:translate(-50%,-50%) scale(.6);opacity:0}
+html.intro .ab-food.f1{animation:ab-flash .24s cubic-bezier(.2,1.6,.4,1) .5s forwards;--s:.7}
+html.intro .ab-food.f2{animation:ab-flash .24s cubic-bezier(.2,1.6,.4,1) .74s forwards;--s:.84}
+html.intro .ab-food.f3{animation:ab-flash .24s cubic-bezier(.2,1.6,.4,1) .98s forwards;--s:.98}
+html.intro .ab-food.f4{animation:ab-last .55s cubic-bezier(.2,1.5,.4,1) 1.22s forwards;--s:1.12}
 html.intro .cortina{animation:ab-sobe .95s cubic-bezier(.76,0,.24,1) 1.75s forwards}
 html.intro .queijo{animation:ab-puxa .95s cubic-bezier(.5,0,.2,1) 1.75s forwards}
 @keyframes ab-fome{from{opacity:0;transform:translate(-50%,-50%) scale(1.25)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
-@keyframes ab-flash{0%{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}100%{opacity:0}}
+@keyframes ab-flash{0%{opacity:1;transform:translate(-50%,-50%) scale(calc(var(--s) - .1))}25%{transform:translate(-50%,-50%) scale(var(--s))}99%{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}100%{opacity:0}}
 @keyframes ab-last{from{opacity:1;transform:translate(-50%,-50%) scale(calc(var(--s) - .12))}to{opacity:1;transform:translate(-50%,-50%) scale(var(--s))}}
 @keyframes ab-sobe{to{transform:translateY(calc(-100% - 160px))}}
 @keyframes ab-puxa{0%{transform:scaleY(.25)}55%{transform:scaleY(1.5)}100%{transform:scaleY(.8)}}
